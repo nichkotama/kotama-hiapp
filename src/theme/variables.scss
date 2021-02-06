@@ -74,9 +74,17 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Defined by Nicholas Kotama **/
+  --ion-color-purple: #6a6ec5;
+  --ion-color-purple-rgb: 106,110,197;
+  --ion-color-purple-contrast: #e8e8e8;
+  --ion-color-purple-contrast-rgb: 0,0,0;
+  --ion-color-purple-shade: #585ca7;
+  --ion-color-purple-tint: #6468b6;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -85,7 +93,7 @@
   body {
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
-    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast: #615353;
     --ion-color-primary-contrast-rgb: 255,255,255;
     --ion-color-primary-shade: #3a7be0;
     --ion-color-primary-tint: #5598ff;
@@ -229,4 +237,18 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.ion-color-mainBtn {
+  --ion-color-base: var(--ion-color-purple);
+  --ion-color-base-rgb: var(--ion-color-purple-rgb);
+  --ion-color-contrast: var(--ion-color-purple-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb);
+  --ion-color-shade: var(--ion-color-purple-shade);
+  --ion-color-tint: var(--ion-color-purple-tint);
+}
+
+.slides-md {
+  --bullet-background: rgb(175, 6, 253);
+  --bullet-background-active: rgb(153, 84, 170);
 }
