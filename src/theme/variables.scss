@@ -82,6 +82,9 @@
   --ion-color-purple-contrast-rgb: 0,0,0;
   --ion-color-purple-shade: #585ca7;
   --ion-color-purple-tint: #6468b6;
+
+  --ion-card-background: #fff;
+  --ion-item-background: #fff;
 }
 
 @media (prefers-color-scheme: light) {
@@ -160,7 +163,7 @@
    * -------------------------------------------
    */
 
-  .ios body {
+  /* .ios body {
     --ion-background-color: #000000;
     --ion-background-color-rgb: 0,0,0;
 
@@ -192,7 +195,7 @@
     --ion-item-background: #000000;
 
     --ion-card-background: #1c1c1d;
-  }
+  } */
 
 
   /*
@@ -200,7 +203,7 @@
    * -------------------------------------------
    */
 
-  .md body {
+  /* .md body {
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18,18,18;
 
@@ -236,7 +239,12 @@
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
-  }
+  } */
+}
+
+a {
+  text-decoration: none;
+  margin-left: 2px;
 }
 
 .ion-color-mainBtn {
@@ -251,4 +259,23 @@
 .slides-md {
   --bullet-background: rgb(175, 6, 253);
   --bullet-background-active: rgb(153, 84, 170);
+}
+
+.hover-form {
+  border-radius: 15px;
+  padding: +10px;
+}
+
+.stick-top {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  right: 30px;
+}
+
+.stick-bottom {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  right: 30px;
 }

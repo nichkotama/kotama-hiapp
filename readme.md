@@ -14,5 +14,7 @@ DM [instagram @nichkotama](https://instagram.com/nichkotama) for credit.
 
 Credits:
 
-- https://dribbble.com/shots/14038223-Covid-19-Daily-Report-Landingpage
+- https://dribbble.com/shots/11938460-FREEBIE-Covid-19-Information
 - https://dribbble.com/shots/14925214-Covid-19-Disease-statistics-Mobile-App
+- https://dribbble.com/shots/11263648-Quarantine-Things
+- 
