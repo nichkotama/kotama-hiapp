@@ -1,0 +1,16 @@
+ion-content {
+    --ion-background-color: #b6ccd7 !important;
+}
+
+img {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.validation-errors .error-message {
+    margin-left: 5%;
+    color: #ec4646;
+}

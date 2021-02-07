@@ -1,0 +1,57 @@
+<ion-content>
+  <img src="assets/images/daftar.png" class="stick-bottom"/>
+  <ion-card class="hover-form stick-top">
+    <ion-card-header>
+      <ion-card-title>Sign Up</ion-card-title>
+      <ion-card-subtitle>Peduli, Lindungi</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)">
+        <ion-list>
+          <ion-item lines='inset'>
+            <ion-label position="stacked">Phone Number</ion-label>
+            <ion-input autocomplete="off" type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.username">
+              <div class="error-message"
+                *ngIf="registerForm.get('username').hasError(validation.type) && (registerForm.get('username').dirty || registerForm.get('username').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          
+          <ion-item lines='inset'>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input autocomplete="off" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message"
+                *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          
+          <ion-item lines='inset'>
+            <ion-label position="stacked">Confirm Password</ion-label>
+            <ion-input autocomplete="off" type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword').errors?.MatchPassword" style="color: red">
+              Password confirmation did not match.
+            </div>
+          </div>
+          
+          <ion-item lines='none' style="font-size: 15px">
+            Already have an account? <a routerLink='/login'> Sign in.</a>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" share="round" color="mainBtn">Register Now</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
