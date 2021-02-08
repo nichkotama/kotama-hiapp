@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase: {
+  firebaseConfig: {
     apiKey: "AIzaSyCRvCY7Q0zvI-DmseLcxKo4sidiSFFAzv8",
     authDomain: "hiappinterview.firebaseapp.com",
     projectId: "hiappinterview",

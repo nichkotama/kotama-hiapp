@@ -1,0 +1,20 @@
+{
+    "victims": [
+        {
+            "name": "DKI Jakarta",
+            "count": 14
+        },
+        {
+            "name": "Jawa Timur",
+            "count": 10
+        },
+        {
+            "name": "Jawa Barat",
+            "count": 8
+        },
+        {
+            "name": "Medan",
+            "count": 5
+        }
+    ]
+}

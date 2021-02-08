@@ -1,9 +1,44 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>admin-dashboard</ion-title>
+    <!-- <ion-label slot="end" (click)="void()" style="margin-right:5px; margin-top: 5px; font-size: 30px;"><ion-icon name="notifications-outline"></ion-icon></ion-label> -->
+    <ion-avatar slot="end" (click)="showUserModal()"><img src="assets/images/default_avatar.png"></ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content class="pad10">
+  <h1>Hi, Admin!</h1>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-card (click)="navigateToAdminGraph()">
+          <ion-card-header>
+            <ion-card-title>Statistic</ion-card-title>
+            <ion-card-subtitle>View as graph</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="pie-chart-outline" color="mainBtn" style="--ion-font-size: 60px"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col text-center>
+        <ion-card (click)="navigateToAdminTable()">
+          <ion-card-header>
+            <ion-card-title>Table</ion-card-title>
+            <ion-card-subtitle>View as table</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-icon name="grid-outline" color="mainBtn"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+
+
 
 </ion-content>

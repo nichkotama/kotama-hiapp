@@ -242,6 +242,21 @@
   } */
 }
 
+@import '../theme/fonts';
+
+body {
+  --ion-font-family: 'Noto';
+}
+
+h1, h2 {
+  font-family: 'Montserrat';
+}
+
+h1 {
+  font-size: 18px;
+  margin-left: 5%;
+}
+
 a {
   text-decoration: none;
   margin-left: 2px;
@@ -251,6 +266,15 @@ a {
   --ion-color-base: var(--ion-color-purple);
   --ion-color-base-rgb: var(--ion-color-purple-rgb);
   --ion-color-contrast: var(--ion-color-purple-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb);
+  --ion-color-shade: var(--ion-color-purple-shade);
+  --ion-color-tint: var(--ion-color-purple-tint);
+}
+
+.ion-color-defaultBtn {
+  --ion-color-base: transparent;
+  --ion-color-base-rgb: transparent;
+  --ion-color-contrast: var(--ion-color-purple);
   --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb);
   --ion-color-shade: var(--ion-color-purple-shade);
   --ion-color-tint: var(--ion-color-purple-tint);
@@ -278,4 +302,12 @@ a {
   bottom: 50px;
   left: 30px;
   right: 30px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.pad10 {
+  padding: 10px !important;
 }

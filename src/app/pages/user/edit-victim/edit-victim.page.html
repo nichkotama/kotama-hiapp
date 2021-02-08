@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button size="big" slot="start"></ion-back-button>
+    <ion-button slot="end" (click)="deleteRecord(id)"><ion-icon name="trash"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="userDoc">
+  <h1>Edit Victim's Data</h1>
+
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col size="12" >
+        <ion-select [(ngModel)]="updaterecord.gender" placeholder="Select" value="{{userDoc.gender}}">
+          <ion-select-option value="Male" [selected]="userDoc.gender=='Male'">Male</ion-select-option>
+          <ion-select-option value="Female" [selected]="userDoc.gender=='Female'">Female</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size="12" >
+        <ion-item>
+          <ion-input [(ngModel)]="updaterecord.first_name" placeholder="First Name" value="{{userDoc.first_name}}"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" >
+        <ion-item>
+          <ion-input [(ngModel)]="updaterecord.last_name" placeholder="Last Name" value="{{userDoc.last_name}}"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-datetime [(ngModel)]="updaterecord.date_of_birth" placeholder="Select Date" value="{{userDoc.date_of_birth}}"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input [(ngModel)]="updaterecord.address" placeholder="Address" value="{{userDoc.address}}"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="10" offset="1">
+        <ion-button expand="block" color="success" (click)="doUpdate(
+          updaterecord.first_name, updaterecord.last_name,
+          updaterecord.date_of_birth, updaterecord.gender, updaterecord.address
+        )">Update!</ion-button>
+      </ion-col>
+    </ion-row>  
+  </div>
+</ion-content>
+
+<ion-content *ngIf="!userDoc">
+  <p style="padding-left:5%">Data not found.</p>
+</ion-content>

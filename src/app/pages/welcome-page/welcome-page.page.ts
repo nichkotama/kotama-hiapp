@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome-page.page.scss'],
 })
 export class WelcomePagePage implements OnInit {
+  public hideHeader: boolean
 
   constructor() { }
 
   ngOnInit() {
+    this.hideHeader = false;
   }
 
 }

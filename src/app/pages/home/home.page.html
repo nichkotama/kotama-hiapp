@@ -1,9 +1,39 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-searchbar animated></ion-searchbar>
+    <ion-button slot="end" size="medium" (click)="addNewVictim()"><ion-icon name="add"></ion-icon></ion-button>
+    <ion-avatar slot="end" (click)="showUserModal()"><img src="assets/images/default_avatar.png"></ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="pad10">
+  <h1>Victims</h1>
+  <!-- SKELETON -->
+  <ion-list *ngIf="!victims">
+    <ion-item text-wrap *ngFor="let n of [].constructor(7); let i = index">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h2><ion-skeleton-text animated></ion-skeleton-text></h2>
+        <h3><ion-skeleton-text animated></ion-skeleton-text></h3>
+        <p><ion-skeleton-text animated></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
 
+  </ion-list>
+  <!-- END OF SKELETON -->
+
+  <ion-list>
+    <ion-item text-wrap *ngFor="let record of victims; let i = index" (click)="ViewRecord(record.id)">
+      <ion-avatar slot="start" class="ios hydrated"><img src="assets/images/default_avatar.png"></ion-avatar>
+      <ion-label>
+        <h2>{{record.first_name}} {{record.last_name}}</h2>
+        <h3>{{record.gender}}</h3>
+        <p>{{record.address}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <p *ngIf="victims?.length===0" style="padding-left:5%">No records in victims.</p>
 </ion-content>

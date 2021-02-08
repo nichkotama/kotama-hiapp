@@ -6,42 +6,39 @@
       <ion-card-subtitle>Peduli, Lindungi</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content>
-      <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">    
+    <ion-card-content>    
+      <ion-list>
+        <ion-item lines='inset'>
+          <ion-label *ngIf="!windowRef.confirmationResult" position="stacked">Phone Number</ion-label>
+          <ion-input *ngIf="!windowRef.confirmationResult" type="tel" [(ngModel)]="phoneNumber" placeholder="+628123456789" maxlength="16"></ion-input>
+          <ion-label *ngIf="windowRef.confirmationResult" position="stacked">{{phoneNumber}}</ion-label>
+          
+          <div class="validation-errors">
+            <ng-container *ngIf="windowRef.hasError">
+              <div class="error-message">
+                Phone number is not valid.
+              </div>
+            </ng-container>
+          </div>
+        </ion-item>
+      </ion-list>
+      
+      <div id="recaptcha-container" [class.hidden]="windowRef.confirmationResult" ></div>
+
+      <ion-button *ngIf="!windowRef.confirmationResult" expand="block" share="round" color="mainBtn" type="submit" (click)="sendLoginCode()" id="loginBtn">Log In</ion-button>
+
+      <div *ngIf="windowRef.confirmationResult">
+        <hr> 
         <ion-list>
           <ion-item lines='inset'>
-            <ion-label position="stacked">Username</ion-label>
-            <ion-input autocomplete="off" type="text" formControlName="username"></ion-input>
-          </ion-item>
-          <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.username">
-              <div class="error-message"
-                *ngIf="validations_form.get('username').hasError(validation.type) && (validations_form.get('username').dirty || validations_form.get('username').touched)">
-                {{ validation.message }}
-              </div>
-            </ng-container>
-          </div>
-          
-          <ion-item lines='inset'>
-            <ion-label position="stacked">Password</ion-label>
-            <ion-input autocomplete="off" type="password" formControlName="password"></ion-input>
-          </ion-item>
-          <div class="validation-errors">
-            <ng-container *ngFor="let validation of validation_messages.password">
-              <div class="error-message"
-                *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
-                {{ validation.message }}
-              </div>
-            </ng-container>
-          </div>
-          
-          <ion-item lines='none' style="font-size: 15px">
-            <a routerLink='/signup'>Create Account</a>
+            <ion-label position="stacked">Enter your Verification Code Here</ion-label>
+            <ion-input type="text" name="code" [(ngModel)]="verificationCode"></ion-input>
           </ion-item>
         </ion-list>
-        <ion-button expand="block" share="round" color="mainBtn" type="submit" [disabled]="!validations_form.valid">Log In</ion-button>
-        <!-- <ion-button expand="block" share="round" color="mainBtn">Login</ion-button> -->
-      </form>
+    
+        <ion-button (click)="verifyLoginCode()" expand="block" share="round" color="mainBtn" >Verify</ion-button>
+      </div>
+
     </ion-card-content>
   </ion-card>
 

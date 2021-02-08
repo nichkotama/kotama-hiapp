@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-label slot="end" (click)="closeModal()" style="margin-right:20px; color: red;">Cancel</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-label>You're logged in as: {{user_phone}} <span *ngIf="user_phone=='+628123456789'"> alias Administrator</span></ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="doSignOut()">Sign Out</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
